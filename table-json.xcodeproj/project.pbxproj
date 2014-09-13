@@ -19,6 +19,13 @@
 		6212EC0419C0B387006CA418 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6212EBEC19C0B387006CA418 /* UIKit.framework */; };
 		6212EC0C19C0B387006CA418 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6212EC0A19C0B387006CA418 /* InfoPlist.strings */; };
 		6212EC0E19C0B387006CA418 /* table_jsonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6212EC0D19C0B387006CA418 /* table_jsonTests.m */; };
+		6212EC1819C0B3AE006CA418 /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6212EC1719C0B3AE006CA418 /* main.storyboard */; };
+		6212EC1E19C0B54D006CA418 /* PISerchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6212EC1D19C0B54D006CA418 /* PISerchViewController.m */; };
+		6212EC2119C0B5C7006CA418 /* PIPostTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6212EC2019C0B5C7006CA418 /* PIPostTableCell.m */; };
+		6253E78819C2078000FAE56E /* PINetImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6253E78719C2078000FAE56E /* PINetImageView.m */; };
+		62B7FF8F19C0C18B00C30257 /* PIDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B7FF8E19C0C18B00C30257 /* PIDataProvider.m */; };
+		62B7FF9219C0E1D900C30257 /* PIPostItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B7FF9119C0E1D900C30257 /* PIPostItem.m */; };
+		62B7FF9519C1712A00C30257 /* PIAsyncRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B7FF9419C1712A00C30257 /* PIAsyncRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +55,19 @@
 		6212EC0919C0B387006CA418 /* table-jsonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "table-jsonTests-Info.plist"; sourceTree = "<group>"; };
 		6212EC0B19C0B387006CA418 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6212EC0D19C0B387006CA418 /* table_jsonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = table_jsonTests.m; sourceTree = "<group>"; };
+		6212EC1719C0B3AE006CA418 /* main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
+		6212EC1C19C0B54D006CA418 /* PISerchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PISerchViewController.h; sourceTree = "<group>"; };
+		6212EC1D19C0B54D006CA418 /* PISerchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PISerchViewController.m; sourceTree = "<group>"; };
+		6212EC1F19C0B5C7006CA418 /* PIPostTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIPostTableCell.h; sourceTree = "<group>"; };
+		6212EC2019C0B5C7006CA418 /* PIPostTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIPostTableCell.m; sourceTree = "<group>"; };
+		6253E78619C2078000FAE56E /* PINetImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PINetImageView.h; sourceTree = "<group>"; };
+		6253E78719C2078000FAE56E /* PINetImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PINetImageView.m; sourceTree = "<group>"; };
+		62B7FF8D19C0C18B00C30257 /* PIDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIDataProvider.h; sourceTree = "<group>"; };
+		62B7FF8E19C0C18B00C30257 /* PIDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIDataProvider.m; sourceTree = "<group>"; };
+		62B7FF9019C0E1D900C30257 /* PIPostItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIPostItem.h; sourceTree = "<group>"; };
+		62B7FF9119C0E1D900C30257 /* PIPostItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIPostItem.m; sourceTree = "<group>"; };
+		62B7FF9319C1712A00C30257 /* PIAsyncRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIAsyncRequest.h; sourceTree = "<group>"; };
+		62B7FF9419C1712A00C30257 /* PIAsyncRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIAsyncRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +131,19 @@
 				6212EBF819C0B387006CA418 /* PIAppDelegate.m */,
 				6212EBFA19C0B387006CA418 /* Images.xcassets */,
 				6212EBEF19C0B387006CA418 /* Supporting Files */,
+				6212EC1719C0B3AE006CA418 /* main.storyboard */,
+				6253E78619C2078000FAE56E /* PINetImageView.h */,
+				6253E78719C2078000FAE56E /* PINetImageView.m */,
+				6212EC1F19C0B5C7006CA418 /* PIPostTableCell.h */,
+				6212EC2019C0B5C7006CA418 /* PIPostTableCell.m */,
+				6212EC1C19C0B54D006CA418 /* PISerchViewController.h */,
+				6212EC1D19C0B54D006CA418 /* PISerchViewController.m */,
+				62B7FF8D19C0C18B00C30257 /* PIDataProvider.h */,
+				62B7FF8E19C0C18B00C30257 /* PIDataProvider.m */,
+				62B7FF9019C0E1D900C30257 /* PIPostItem.h */,
+				62B7FF9119C0E1D900C30257 /* PIPostItem.m */,
+				62B7FF9319C1712A00C30257 /* PIAsyncRequest.h */,
+				62B7FF9419C1712A00C30257 /* PIAsyncRequest.m */,
 			);
 			path = "table-json";
 			sourceTree = "<group>";
@@ -221,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6212EBF319C0B387006CA418 /* InfoPlist.strings in Resources */,
+				6212EC1819C0B3AE006CA418 /* main.storyboard in Resources */,
 				6212EBFB19C0B387006CA418 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,8 +274,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62B7FF8F19C0C18B00C30257 /* PIDataProvider.m in Sources */,
+				6253E78819C2078000FAE56E /* PINetImageView.m in Sources */,
 				6212EBF519C0B387006CA418 /* main.m in Sources */,
+				62B7FF9519C1712A00C30257 /* PIAsyncRequest.m in Sources */,
 				6212EBF919C0B387006CA418 /* PIAppDelegate.m in Sources */,
+				62B7FF9219C0E1D900C30257 /* PIPostItem.m in Sources */,
+				6212EC1E19C0B54D006CA418 /* PISerchViewController.m in Sources */,
+				6212EC2119C0B5C7006CA418 /* PIPostTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +478,7 @@
 				6212EC1319C0B387006CA418 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6212EC1419C0B387006CA418 /* Build configuration list for PBXNativeTarget "table-jsonTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +487,7 @@
 				6212EC1619C0B387006CA418 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
