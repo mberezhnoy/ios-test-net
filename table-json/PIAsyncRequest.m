@@ -19,6 +19,7 @@
 @synthesize request = _request;
 @synthesize isFinished = _isFinished;
 @synthesize responseData = _responseData;
+@synthesize response = _response;
 
 - (PIAsyncRequest*)init
 {
@@ -65,6 +66,11 @@
 }
 
 #pragma mark NSURLConnectionDelegate
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    _response = response;
+}
+
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
     [_responseData appendData:data];

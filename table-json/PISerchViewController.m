@@ -9,6 +9,7 @@
 #import "PISerchViewController.h"
 #import "PIDataProvider.h"
 #import "PIPostTableCell.h"
+#import "PINetImageView.h"
 
 
 @interface PISerchViewController ()
@@ -24,7 +25,10 @@
 {
     [super viewDidLoad];
     
-    _tableView.hidden = true;
+    _loading.animationImages = [PINetImageView getLoadingFrames];
+    _loading.animationDuration = 1;
+    [self showLoading:YES withAnimation:NO];
+
     self.searchDisplayController.searchResultsTableView.rowHeight = _tableView.rowHeight;
 
     
@@ -33,18 +37,65 @@
     [dataProvider startRequest];
 }
 
+- (void)showLoading:(BOOL)isLoading withAnimation:(BOOL)isAnimated
+{
+    UITableView * stbl = self.searchDisplayController.searchResultsTableView;
+    CGFloat loadAlpha = isLoading ? 1 : 0;
+
+//    NSLog(@"showLoading %d %d", isLoading, isAnimated);
+    if(isAnimated)
+    {
+        _loading.hidden = NO;
+        _tableView.hidden = NO;
+        if ( _tableView != stbl) stbl.hidden = NO;
+
+        [UIView animateWithDuration:0.5 delay:0
+                options:UIViewAnimationOptionCurveEaseInOut
+                animations:^{
+                    _loading.alpha = loadAlpha;
+                    _tableView.alpha = 1-loadAlpha;
+                    stbl.alpha = 1-loadAlpha;
+                }
+                completion:^(BOOL finished){
+                    //if(!finished) return ;
+                    _loading.hidden = !isLoading;
+                    _tableView.hidden = isLoading;
+                    stbl.hidden = isLoading;
+                    if (isLoading)
+                    {
+                        [_loading startAnimating];
+                    }else
+                    {
+                        [_loading stopAnimating];
+                    }
+                }];
+    }else
+    {
+        _loading.hidden = !isLoading;
+        _tableView.hidden = isLoading;
+        stbl.hidden = isLoading;
+
+        _loading.alpha = loadAlpha;
+        _tableView.alpha = 1-loadAlpha;
+        stbl.alpha = 1-loadAlpha;
+        
+        if (isLoading)
+        {
+            [_loading startAnimating];
+        }else
+        {
+            [_loading stopAnimating];
+        }
+    }
+    
+}
+
 - (void)onDataLoad:(id)sender
 {
-    _loadingLable.hidden = true;
-    _tableView.hidden = false;
-    if ( _tableView != self.searchDisplayController.searchResultsTableView)
-    {
-        self.searchDisplayController.searchResultsTableView.hidden = false;
-    }
-
     dispatch_async(dispatch_get_main_queue(), ^{
         [_tableView reloadData];
         [self.searchDisplayController.searchResultsTableView reloadData];
+        [self showLoading:NO withAnimation:YES];
     });
     
 }
@@ -84,14 +135,7 @@
 - (void)onSearchTextChanged:(NSString*)searchText
 {
     dataProvider.searchString = searchText;
-    _tableView.hidden = true;
-    _loadingLable.hidden = false;
-    if ( _tableView != self.searchDisplayController.searchResultsTableView)
-    {
-        self.searchDisplayController.searchResultsTableView.hidden = true;
-    }
-
-//    NSLog(@"%@  %@", searchText, scope);
+    [self showLoading:YES withAnimation:YES];
 }
 
 #pragma mark - UISearchDisplayController Delegate Methods

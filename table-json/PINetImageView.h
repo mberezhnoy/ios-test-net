@@ -12,4 +12,6 @@
 
 @property (readwrite,nonatomic) NSString * imgUrl;
 
++(NSArray*)getLoadingFrames;
+
 @end

@@ -87,17 +87,15 @@
                                     <outlet property="delegate" destination="ftP-rS-A9B" id="Yq0-kG-ZRr"/>
                                 </connections>
                             </searchBar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KGx-ax-gz4">
-                                <rect key="frame" x="95" y="262" width="120" height="44"/>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="4fc-SX-CSW">
+                                <rect key="frame" x="33" y="165" width="256" height="256"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="loadingLable" destination="KGx-ax-gz4" id="edk-Ob-g52"/>
+                        <outlet property="loading" destination="4fc-SX-CSW" id="PAj-L5-OAB"/>
                         <outlet property="searchDisplayController" destination="W1m-qK-8QZ" id="dJV-06-wmM"/>
                         <outlet property="tableView" destination="7Yk-YW-TwR" id="ose-Tp-AwM"/>
                     </connections>

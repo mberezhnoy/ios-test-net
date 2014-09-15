@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PIAsyncRequest : NSObject <NSURLConnectionDelegate>
+@interface PIAsyncRequest : NSObject <NSURLConnectionDataDelegate>
 
 @property (readonly) NSString * url;
 @property (readonly) NSMutableURLRequest *request;
 @property (readonly) BOOL isFinished;
 @property (readonly) NSMutableData * responseData;
+@property (readonly) NSURLResponse * response;
 
 
 -(PIAsyncRequest*)initWithUrl:(NSString*)url;
