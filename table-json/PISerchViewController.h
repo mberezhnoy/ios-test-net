@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PISerchViewController : UIViewController <UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate>
+@interface PISerchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;

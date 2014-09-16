@@ -13,6 +13,7 @@
     id _cbLoadObj;
     SEL _cbLoadSel;
     NSMutableArray * _posts;
+    int _lastPage;
 }
 
 @synthesize size = _size;
@@ -22,7 +23,6 @@
 {
     PIDataProvider* obj = [super init];
     _posts = [[NSMutableArray alloc] init];
-    _size = 0;
     return  obj;
 }
 
@@ -35,17 +35,13 @@
 -(void)startRequest
 {
     [_request interrupt];
+    _request = nil;
     
-    NSString *urlString = @"http://idol.max/api/get-posts?numberposts=100";
-    if ( _searchString!=nil && [_searchString length]!=0 )
-    {
-        NSString * _se = [PIDataProvider encodeURIComponen: _searchString];
-        urlString = [NSString stringWithFormat:@"%@&s=%@", urlString, _se];
-    }
-    //NSLog(@"serch: %@ url: %@", _searchString, urlString);
+    _size = 0;
+    _lastPage = 1;
+    [_posts removeAllObjects];
     
-    _request = [PIAsyncRequest createWithUrl:urlString];
-    [_request runAndOnFinishNotifyObject:self withSelector:@selector(onDataLoad:)];
+    [self dataRequest];
 }
 
 - (void)onLoadNotifyObject:(id)object withSelector:(SEL)selector
@@ -64,24 +60,51 @@
     
     if ( !json[@"ok"]) return;
     
-    _size = [json[@"posts"] count];
-    
-//    NSLog(@"response %@ for %@ from:%@", json[@"total"], _searchString, rq.url);
-    
-    [_posts removeAllObjects];
+    _size = [json[@"total"] integerValue];
+
+
     
     for(id postData in json[@"posts"])
     {
         [_posts addObject:[PIPostItem createFromData:postData]];
     }
 
-    NSLog(@"data size: %d", [_posts count]);
-    [_cbLoadObj performSelector:_cbLoadSel withObject:self];    
+    //NSLog(@"data size: %d", [_posts count]);
+    [_cbLoadObj performSelector:_cbLoadSel withObject:self];
+    _request = nil;
 }
 
 - (PIPostItem*)getItem:(int)i
 {
+    if (i>=[_posts count])
+    {
+        [self loadMore];
+        return nil;
+    }
     return (PIPostItem*)[_posts objectAtIndex:i];
+}
+
+-(void)loadMore
+{
+    if(_request != nil) return;
+    _lastPage++;
+    [self dataRequest];
+}
+
+-(void)dataRequest
+{
+    if(_request != nil) return;
+    
+    NSString *urlString = [NSString stringWithFormat:@"http://idol.max/api/get-posts?numberposts=10&paged=%d", _lastPage];
+    if ( _searchString!=nil && [_searchString length]!=0 )
+    {
+        NSString * _se = [PIDataProvider encodeURIComponen: _searchString];
+        urlString = [NSString stringWithFormat:@"%@&s=%@", urlString, _se];
+    }
+    
+    _request = [PIAsyncRequest createWithUrl:urlString];
+    [_request runAndOnFinishNotifyObject:self withSelector:@selector(onDataLoad:)];
+
 }
 
 +(NSString *) encodeURIComponen: (NSString*)s

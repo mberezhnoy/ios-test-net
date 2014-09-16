@@ -10,6 +10,8 @@
 #import "PIDataProvider.h"
 #import "PIPostTableCell.h"
 #import "PINetImageView.h"
+#import "PILoadingViewCell.h"
+
 
 
 @interface PISerchViewController ()
@@ -116,16 +118,27 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString * const cid = @"post-default";
-    PIPostTableCell * cell = [tableView dequeueReusableCellWithIdentifier: cid];
-    if ( cell==nil)
-    {
-        cell = [_tableView dequeueReusableCellWithIdentifier: cid];
-    }
+    static NSString * const cid_p = @"post-default";
+    static NSString * const cid_l = @"loading";
     
     PIPostItem * post = [dataProvider getItem:indexPath.row];
+    NSString * cid = post==nil ? cid_l : cid_p;
     
+    UITableViewCell *cellUn = [tableView dequeueReusableCellWithIdentifier: cid];
+    if ( cellUn==nil)
+    {
+        cellUn = [_tableView dequeueReusableCellWithIdentifier: cid];
+    }
+    if(post==nil)
+    {
+        PILoadingViewCell *cellLd = (PILoadingViewCell *)cellUn;
+        [cellLd animatimate];
+        return cellLd;
+    }
+    
+    PIPostTableCell * cell = (PIPostTableCell *)cellUn;
     cell.postTitle.text = post.title;
+    //cell.postTitle.text = [NSString stringWithFormat:@"post #%d", indexPath.row];
     cell.postContent.text = post.text;
     cell.postImage.imgUrl = post.thumb;
     
