@@ -22,6 +22,7 @@
 		6212EC1819C0B3AE006CA418 /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6212EC1719C0B3AE006CA418 /* main.storyboard */; };
 		6212EC1E19C0B54D006CA418 /* PISerchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6212EC1D19C0B54D006CA418 /* PISerchViewController.m */; };
 		6212EC2119C0B5C7006CA418 /* PIPostTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6212EC2019C0B5C7006CA418 /* PIPostTableCell.m */; };
+		624B093119C811D80085E0E6 /* PILoadingViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 624B093019C811D80085E0E6 /* PILoadingViewCell.m */; };
 		6253E78819C2078000FAE56E /* PINetImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6253E78719C2078000FAE56E /* PINetImageView.m */; };
 		62B7FF8F19C0C18B00C30257 /* PIDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B7FF8E19C0C18B00C30257 /* PIDataProvider.m */; };
 		62B7FF9219C0E1D900C30257 /* PIPostItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B7FF9119C0E1D900C30257 /* PIPostItem.m */; };
@@ -60,6 +61,8 @@
 		6212EC1D19C0B54D006CA418 /* PISerchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PISerchViewController.m; sourceTree = "<group>"; };
 		6212EC1F19C0B5C7006CA418 /* PIPostTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIPostTableCell.h; sourceTree = "<group>"; };
 		6212EC2019C0B5C7006CA418 /* PIPostTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIPostTableCell.m; sourceTree = "<group>"; };
+		624B092F19C811D80085E0E6 /* PILoadingViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PILoadingViewCell.h; sourceTree = "<group>"; };
+		624B093019C811D80085E0E6 /* PILoadingViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PILoadingViewCell.m; sourceTree = "<group>"; };
 		6253E78619C2078000FAE56E /* PINetImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PINetImageView.h; sourceTree = "<group>"; };
 		6253E78719C2078000FAE56E /* PINetImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PINetImageView.m; sourceTree = "<group>"; };
 		62B7FF8D19C0C18B00C30257 /* PIDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIDataProvider.h; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 				6212EBFA19C0B387006CA418 /* Images.xcassets */,
 				6212EBEF19C0B387006CA418 /* Supporting Files */,
 				6212EC1719C0B3AE006CA418 /* main.storyboard */,
+				624B092F19C811D80085E0E6 /* PILoadingViewCell.h */,
+				624B093019C811D80085E0E6 /* PILoadingViewCell.m */,
 				6253E78619C2078000FAE56E /* PINetImageView.h */,
 				6253E78719C2078000FAE56E /* PINetImageView.m */,
 				6212EC1F19C0B5C7006CA418 /* PIPostTableCell.h */,
@@ -276,6 +281,7 @@
 			files = (
 				62B7FF8F19C0C18B00C30257 /* PIDataProvider.m in Sources */,
 				6253E78819C2078000FAE56E /* PINetImageView.m in Sources */,
+				624B093119C811D80085E0E6 /* PILoadingViewCell.m in Sources */,
 				6212EBF519C0B387006CA418 /* main.m in Sources */,
 				62B7FF9519C1712A00C30257 /* PIAsyncRequest.m in Sources */,
 				6212EBF919C0B387006CA418 /* PIAppDelegate.m in Sources */,
